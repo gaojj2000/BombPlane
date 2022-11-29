@@ -2,6 +2,11 @@
 # FileName: main.py
 # IDE: PyCharm
 
+# ps -aux | grep -v grep | grep python3
+# nohup /www/server/panel/pyenv/bin/python3.7 main.py > flask.log 2>&1 &
+# 110.42.181.215:8866
+# cat /dev/null > ~/.bash_history && history -c && exit
+
 # nohup python3 main.py > flask.log 2>&1 &
 # ps -aux | grep -v grep | grep python3
 # for pid in `ps -aux | grep -v grep | grep python3 | awk '{print $2}'`;do kill -9 $pid;done
@@ -78,7 +83,7 @@ def player_wait(room: str, user: str):
     :return:
     """
     while 1:
-        if rooms[room].boards[user].attachable:
+        if room in rooms and rooms[room].boards[user].attachable:
             return True
         sleep(0.5)
 
@@ -99,6 +104,8 @@ def index():
         if room_ and size:
             try:
                 if room_ not in rooms:
+                    rooms[room_] = Room(int(room_), int(size))
+                elif (rooms[room_].boards.get('0') and rooms[room_].boards['0'].attachable) and (rooms[room_].boards.get('1') and rooms[room_].boards['1'].attachable):
                     rooms[room_] = Room(int(room_), int(size))
                 room = rooms[room_]
                 if not room.boards.get('0', None):  # 第一位加入房间（创建房间）的人
@@ -147,6 +154,8 @@ def index():
                 res = make_response(temple, 200)
                 res.delete_cookie('room')
                 res.delete_cookie('user')
+                room.boards[user].attachable = True
+                room.boards['0' if int(user) else '1'].attachable = True
                 return res
             elif set(room.boards['0' if int(user) else '1'].plan_alive.values()) == {False}:
                 temple = render_template('index.html', left=room.boards[user].get_board(Board.LEFT), right=room.boards['0' if int(user) else '1'].get_board(Board.RIGHT),
@@ -154,6 +163,8 @@ def index():
                 res = make_response(temple, 200)
                 res.delete_cookie('room')
                 res.delete_cookie('user')
+                room.boards[user].attachable = True
+                room.boards['0' if int(user) else '1'].attachable = True
                 return res
             else:
                 temple = render_template('index.html', left=room.boards[user].get_board(Board.LEFT), right=room.boards['0' if int(user) else '1'].get_board(Board.RIGHT),
