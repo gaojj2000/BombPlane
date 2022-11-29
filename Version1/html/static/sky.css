@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+html {
+	height: 100%;
+	background-image: url(sky.jpg);
+}
+
+body {
+	height: 99%;
+	position: relative;
+}
+
+#start {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.control{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	display: block;
+	position: absolute;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: .1rem .1rem .05rem rgba(0,0,0,.5);
+}
+
+.control>p {
+	width: 280px;
+	font-size: 26px;
+	margin: 20px auto;
+	position: relative;
+	text-align: center;
+}
+
+.control>form p {
+	width: 250px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.control input[type="text"] {
+	margin: 0;
+	width: 250px;
+	padding: 5px 0;
+	font-size: 20px;
+}
+
+.control input[type="submit"] {
+	margin: 20px 90px;
+	width: 60px;
+	padding: 5px 0;
+	font-size: 24px;
+}
+
+.fr {
+	width: 260px;
+	float: right;
+	margin-top: 200px;
+}
+
+#note {
+	pointer-events: none;
+}
+
+.note {
+	top: 50%;
+	color: red;
+	width: 100%;
+	height: 20px;
+	display: none;
+	font-size: 28px;
+	text-align: center;
+	position: absolute;
+	margin: -10px 0 0 0;
+}
+
+#out button {
+	margin-top: 40px;
+	font-size: 28px;
+	border: 2px red solid;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#out button:hover {
+	cursor: pointer;
+}
+
+center.outer {
+	top: 50%;
+	left: 50%;
+	width: 1400px;
+	height: 800px;
+	position: absolute;
+	margin: -400px 0 0 -700px;
+}
+
+.title>span {
+	font-size: 24px;
+	margin: 0 400px 0 200px;
+}
+
+.sky {
+	float: left;
+	width: 600px;
+	height: 650px;
+	display: none;
+}
+
+.sky>center {
+	font-size: 24px;
+	padding-bottom: 1px;
+}
+
+.sky>div {
+	width: 600px;
+	height: 600px;
+	margin-top: 18px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.4);
+	/* #25a0e4 (37, 160, 228) */
+}
+
+#left:after,
+#right:after {
+	width: 0;
+	height: 0;
+	content: "";
+	clear: both;
+	display: none;
+	visibility: hidden;
+}
+
+.sky.left {
+	margin: 0 80px 0 20px;
+}
+
+.sky.right {
+	margin: 0 20px 0 80px;
+}
+
+#plans {
+	position: absolute;
+}
+
+#plans>div {
+	width: 252px;
+	height: 202px;
+	display: none;
+	margin-top: 80px;
+	border-radius: 10px;
+	border: white 1px solid;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+#plans>div>div:after {
+	width: 0;
+	height: 0;
+	content: "";
+	clear: both;
+	display: none;
+	visibility: hidden;
+}

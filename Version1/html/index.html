@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>炸飞机双人小游戏在线玩</title>
+		<link rel="stylesheet" href="static/sky.css" />
+		<script src="static/play.js"></script>
+	</head>
+	<body>
+		<center class="outer">
+			<div class="title">
+				<h2>炸飞机双人小游戏在线玩</h2>
+			</div>
+			<div class="sky left">
+				<center>我方飞机区域</center>
+				<div id="left" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			</div>
+			<div class="sky right">
+				<center>敌方飞机区域</center>
+				<div id="right"></div>
+			</div>
+		</center>
+		<div id="plans">
+			<div id="plan1" draggable="true" ondragstart="drag(event)"></div>
+			<div id="plan2" draggable="true" ondragstart="drag(event)"></div>
+			<div id="plan3" draggable="true" ondragstart="drag(event)"></div>
+		</div>
+		<div class="fr">
+			<h3>游戏说明：</h3>
+			<p>1、点击创建房间获取房间号，邀请另一半输入房间号即可加入房间。</p>
+			<p>2、每个人都要放置3架飞机，一旦放下不可更改，拖动到我方飞机区域（左）内即可，拖动时将红色虚线对准拖动后的方块，不要拖太快，容易卡bug！</p>
+			<p>3、本游戏为回合制游戏，先后手将由系统自动分配，点击敌方飞机区域（右）进行攻击，击中飞机中心（有文字的地方）则飞机立刻坠毁，坠毁后会在图中显示飞机轮廓，不可撤销攻击，请谨慎攻击。</p>
+			<p>4、如果击中敌方飞机，则方块变红，否则方块变白；击中飞机中心（有文字的地方）则整个飞机都会显示且变灰（代表已坠毁），比谁能更快击毁三架飞机吧~</p>
+		</div>
+		<div id="note" class="note"></div>
+		<div id="start">
+			<aside class="control">
+				<p>{{msg}}<p>
+				<form id="play" method="get" action="/">
+					<p id="room"><input type="text" name="room" placeholder="请输入房间号（4位数字）" /></p>
+					<p id="res"><input type="submit" value="加入" /></p>
+				</form>
+			</aside>
+		</div>
+		<div id="out" class="note">
+			<button onclick="logout()">退出登录</button>
+		</div>
+	</body>
+</html>
