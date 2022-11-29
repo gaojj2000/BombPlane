@@ -1,0 +1,217 @@
+@charset "utf-8";
+
+html {
+	height: 100%;
+	background-image: url(sky.jpg);
+}
+
+body {
+	height: 97%;
+	position: relative;
+}
+
+#start {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.control{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	display: block;
+	position: absolute;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: .1rem .1rem .05rem rgba(0,0,0,0.5);
+}
+
+.control>p {
+	width: 280px;
+	font-size: 26px;
+	margin: 20px auto;
+	position: relative;
+	text-align: center;
+}
+
+.control>form p {
+	width: 250px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.control input[type="text"] {
+	margin: 0;
+	width: 250px;
+	padding: 5px 0;
+	font-size: 20px;
+}
+
+.control input[type="submit"] {
+	float: left;
+	margin: 20px 0 20px 40px;
+	width: 60px;
+	padding: 5px 0;
+	font-size: 24px;
+}
+
+#res>span {
+	float: left;
+	margin: 25px 0;
+	font-size: 24px;
+}
+
+#res>select{
+	float: left;
+	margin: 25px 0;
+	font-size: 24px;
+}
+
+.outer {
+	top: 50%;
+	left: 50%;
+	width: 1400px;
+	height: 800px;
+	position: absolute;
+	margin: -400px 0 0 -700px;
+}
+
+.sky {
+	float: left;
+	width: 600px;
+	height: 650px;
+}
+
+.sky>center {
+	font-size: 24px;
+	padding-bottom: 1px;
+}
+
+.sky>div {
+	width: 600px;
+	height: 600px;
+	margin-top: 18px;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.4);
+	/* #25a0e4 (37, 160, 228) */
+}
+
+#left:after,
+#right:after {
+	width: 0;
+	height: 0;
+	content: "";
+	clear: both;
+	display: none;
+	visibility: hidden;
+}
+
+.sky.left {
+	margin: 0 80px 0 20px;
+}
+
+.sky.right {
+	margin: 0 20px 0 80px;
+}
+
+.tip {
+	margin: 0;
+	padding: 0;
+	top: 160px;
+	right: 0;
+	width: 260px;
+	position: absolute;
+}
+
+#plans {
+	position: absolute;
+}
+
+#plans>div {
+	margin-top: 80px;
+	border-radius: 10px;
+	border: white 1px solid;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+#plans>div>div:after {
+	width: 0;
+	height: 0;
+	content: "";
+	clear: both;
+	display: none;
+	visibility: hidden;
+}
+
+.plan_ground {
+	float: left;
+	width: 50px;
+	height: 50px;
+	border-radius: 8px;
+	background-color: rgba(37, 160, 228, 0.4);
+}
+
+.plan_items {
+	float: left;
+	width: 50px;
+	height: 50px;
+	border-radius: 0;
+	background-color: #25a0e4;
+}
+
+.plan_items_core {
+	float: left;
+	width: 48px;
+	height: 48px;
+	border-radius: 0;
+	line-height: 48px;
+	text-align: center;
+	border: 1px red dashed;
+	background-color: #25a0e4;
+}
+
+.ground {
+	float: left;
+	border-radius: 8px;
+	background-color: rgba(37, 160, 228, 0.4);
+}
+
+.plane {
+	float: left;
+	border-radius: 0;
+	background-color: #25a0e4;
+}
+
+.core {
+	float: left;
+	border-radius: 0;
+	text-align: center;
+	border: 1px red dashed;
+	background-color: #25a0e4;
+}
+
+.attack {
+	float: left;
+	border-radius: 0;
+	background-color: red;
+}
+
+.miss {
+	float: left;
+	border-radius: 0;
+	background-color: white;
+}
+
+.crash {
+	float: left;
+	border-radius: 0;
+	background-color: gray;
+}
