@@ -1,6 +1,12 @@
 # _*_ coding:utf-8 _*_
+# Project: 
 # FileName: board.py
+# UserName: 高俊佶
+# ComputerUser：19305
+# Day: 2021/12/9
+# Time: 12:00
 # IDE: PyCharm
+# 女人，不要也罢！——来自2021-10-9日的灵魂伤感
 
 from enum import Enum
 from plan import Plan

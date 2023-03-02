@@ -31,7 +31,7 @@ function drag(event) {
 };
 
 function drop(event) {
-	ajax('/draw_plan?plan=' + event.dataTransfer.getData('text') + '&site=' + event.path[0].id.slice(2), refreash);
+	ajax('/draw_plan?plan=' + event.dataTransfer.getData('text') + '&site=' + event.target.id.slice(2), refreash);
 };
 
 function allowDrop(event) {

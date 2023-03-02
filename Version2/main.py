@@ -1,6 +1,12 @@
 # _*_ coding:utf-8 _*_
+# Project: 
 # FileName: main.py
+# UserName: 高俊佶
+# ComputerUser：19305
+# Day: 2021/12/9
+# Time: 12:00
 # IDE: PyCharm
+# 女人，不要也罢！——来自2021-10-9日的灵魂伤感
 
 # ps -aux | grep -v grep | grep python3
 # nohup /www/server/panel/pyenv/bin/python3.7 main.py > flask.log 2>&1 &
@@ -21,7 +27,8 @@
 """
 
 from time import sleep
-from room import Room, Board
+from room import Room
+from board import Board
 from flask_cors import CORS
 from flask import Flask, request, make_response, render_template, jsonify
 
